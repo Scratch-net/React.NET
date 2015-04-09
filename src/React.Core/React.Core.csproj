@@ -136,9 +136,6 @@
     <None Include="React.Core.nutrans" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\react-with-addons.js" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\shims.js" />
   </ItemGroup>
   <ItemGroup />

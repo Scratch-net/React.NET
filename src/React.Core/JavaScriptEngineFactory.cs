@@ -132,9 +132,13 @@ namespace React
 		{
 			var thisAssembly = typeof(ReactEnvironment).Assembly;
 			engine.ExecuteResource("React.Resources.shims.js", thisAssembly);
-			engine.ExecuteResource("React.Resources.react-with-addons.js", thisAssembly);
-			engine.Execute("var React = global.React");
 			engine.ExecuteResource("React.Resources.JSXTransformer.js", thisAssembly);
+            _config.Scripts?.ToList().ForEach(
+                s =>
+                    {
+                        var path = _fileSystem.MapPath(s);
+                        engine.ExecuteFile(path);
+                    });
 		}
 
 		/// <summary>
